@@ -1,3 +1,17 @@
+# DonorQuest Django
+/backend/__pycache__/
+/backend/donorquest/__pycache__/
+/backend/db.sqlite3
+/backend/media/
+/backend/static/
+/backend/venv/
+/backend/.env
+
+# DonorQuest React
+/frontend/node_modules/
+/frontend/build/
+/frontend/.env
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
