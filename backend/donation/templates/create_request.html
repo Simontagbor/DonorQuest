@@ -1,0 +1,39 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Create Donation Request</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="patient_name" class="form-label">Patient Name:</label>
+            <input type="text" class="form-control" id="patient_name" name="patient_name" required>
+        </div>
+        <div class="mb-3">
+            <label for="blood_type" class="form-label">Blood Type:</label>
+            <input type="text" class="form-control" id="blood_type" name="blood_type" required>
+        </div>
+        <div class="mb-3">
+            <label for="hospital" class="form-label">Hospital:</label>
+            <input type="text" class="form-control" id="hospital" name="hospital" required>
+        </div>
+        <div class="mb-3">
+            <label for="patient_story" class="form-label">Patient Story:</label>
+            <textarea class="form-control" id="patient_story" name="patient_story" rows="4" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="patient_avatar" class="form-label">Patient Avatar:</label>
+            <input type="file" class="form-control" id="patient_avatar" name="patient_avatar">
+        </div>
+        <div class="mb-3">
+            <label for="tags" class="form-label">Tags:</label>
+            <input type="text" class="form-control" id="tags" name="tags">
+        </div>
+        <div class="mb-3">
+            <label for="number_of_pints" class="form-label">Number of Pints:</label>
+            <input type="number" class="form-control" id="number_of_pints" name="number_of_pints" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Request</button>
+    </form>
+</div>
+{% endblock %}
