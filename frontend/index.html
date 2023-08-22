@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requests Page</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+  <header>
+    <!-- ... Header content ... -->
+  </header>
+  
+  <!-- Requests Container -->
+  <div class="requests-container">
+    <!-- Person 1 -->
+    <div class="request-box">
+      <img src="images/person1.jpg" alt="Person 1" class="person-image">
+      <h2>Person 1</h2>
+      <p class="blood-type">Blood Type: A+</p>
+    </div>
+    <!-- Repeat similar structure for other persons -->
+  </div>
+
+  <!-- Image Gallery -->
+  <div class="gallery">
+    <!-- Person 1 -->
+    <div class="image-container">
+      <img src="images/person1.jpg" alt="Person 1">
+      <div class="overlay">
+        <h2>Person 1</h2>
+        <p>Additional info...</p>
+      </div>
+    </div>
+    <!-- Repeat similar structure for other persons -->
+  </div>
+
+  <!-- Expanded View Modal -->
+  <div class="expanded-view" id="expanded-view">
+    <div class="expanded-content">
+      <span class="close-button" id="close-button">&times;</span>
+      <img id="expanded-image" src="" alt="Person Image">
+      <h2 id="expanded-name">Person Name</h2>
+      <p id="expanded-info">Additional info...</p>
+      <button class="donate-button">Donate Blood</button>
+      <button class="share-button">Share</button>
+    </div>
+  </div>
+
+  <script src="page.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+- your-project-folder
+  - index.html
+  - styles
+    - page.css
