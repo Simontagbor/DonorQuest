@@ -1,182 +1,50 @@
-/* Reset default margin and padding */
-body, h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Background image for the body */
-  body {
-    background-image: url("path/to/your/background-image.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Styling for the header */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Styling for the Donor Quest title */
-  header p {
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  /* Styling for the navigation links */
-  nav ul {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    margin-right: 20px;
-  }
-  
-  nav ul li:last-child {
-    margin-right: 10px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-  }
-  
-  /* Styling for the requests-container */
-  .requests-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px;
-  }
-  
-  /* Styling for each request box */
-  .request-box {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    width: calc(33.33% - 40px); /* Three boxes per row */
-  }
-  
-  /* Styling for the person image */
-  .person-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 0 auto 10px;
-  }
-  
-  /* Styling for blood type */
-  .blood-type {
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  /* Styling for the image gallery */
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px;
-  }
-  
-  /* Styling for image containers */
-  .image-container {
-    position: relative;
-    margin: 10px;
-  }
-  
-  .image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  }
-  
-  /* Styling for the image overlay */
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .image-container:hover .overlay {
-    opacity: 1;
-  }
-  
-  /* Styling for expanded view */
-  .expanded-view {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    display: none;
-  }
-  
-  .expanded-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .expanded-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  /* Styling for the close button */
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  /* Styling for image containers in the gallery */
-.image-container {
-    position: relative;
-    margin: 10px;
-    width: calc(33.33% - 20px); /* Three columns per row */
-  }
-  
-  .image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  }
-  
+/* ... Other styles ... */
+
+/* Content section styles */
+.content {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Request box container styles */
+.request-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+/* Request box styles */
+.request-box {
+  width: 150px;
+  height: 200px;
+  margin: 5px; /* Adjust spacing here */
+  text-align: center;
+  background-color: #f2f2f2; /* Gray background */
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.request-box img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Circular profile picture effect */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.request-box h2 {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.request-box p {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+/* ... Other styles ... */
