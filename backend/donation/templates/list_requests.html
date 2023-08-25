@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+
+{% block title %}View Requests{% endblock %}
+{% block main %}
+<div class="container mt-4">
+    <h2>Donation Requests</h2>
+    <ul class="list-group">
+        {% for request in donation_requests %}
+        <li class="list-group-item">
+            <h4>{{ request.patient_name }}</h4>
+            <p>Hospital: {{ request.hospital }}</p>
+            <p>Blood Type: {{ request.blood_type }}</p>
+            <p>Patient Story: {{ request.patient_story }}</p>
+            <!-- Add other request details as needed -->
+        </li>
+        {% empty %}
+        <li class="list-group-item">No donation requests available.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
