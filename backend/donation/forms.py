@@ -34,15 +34,12 @@ class BaseDonationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['donation_request'].widget = forms.HiddenInput()
-
+        
     def clean(self):
         cleaned_data = super().clean()
         donation_request = cleaned_data.get('donation_request')
 
-        if not donation_request:
-            raise forms.ValidationError("Donation request must be selected.")
-
+        
 class RandomDonationForm(BaseDonationForm):
     """Form for creating a new random donation."""
     def __init__(self, *args, **kwargs):
@@ -54,9 +51,14 @@ class SpecificDonationForm(BaseDonationForm):
     def __init__(self, *args, **kwargs):
         donation_request_obj = kwargs.pop('donation_request', None)
         super().__init__(*args, **kwargs)
+        self.fields['donation_request'].widget = forms.HiddenInput()
 
         if donation_request_obj:
             self.fields['donation_request'].initial = donation_request_obj.donation_request
+            
+        # if not donation_request_obj:
+        #     raise forms.ValidationError("Donation request must be selected.")
+
 
 class UserProfileForm(forms.ModelForm):
     """Form for creating a new user profile."""
