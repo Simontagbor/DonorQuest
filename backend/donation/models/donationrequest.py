@@ -17,14 +17,15 @@ class DonationRequest(DonationBase):
     pending_donations = models.ForeignKey(Donation, on_delete=models.CASCADE, null=True, blank=True, related_name='pending_requests')
     verified_donations = models.ForeignKey(Donation, on_delete=models.CASCADE, null=True, blank=True, related_name='verified_requests')
     
-    def update_donors_needed(self):
+    
+    def set_donors_needed(self, number_of_pints):
         """
-        Update the number of donors needed based on the number of pints specified,
+        Set the number of donors needed based on the number of pints specified,
         using a buffer scale.
         """
         self.donors_needed = int(self.number_of_pints * self._BUFFER_SCALE)
         self.save()
-
+        
     def add_donation(self, donation):
         """
         Add a blood donation associated with this donation request.
@@ -35,7 +36,7 @@ class DonationRequest(DonationBase):
         if donation.status == "Verified":
             self.donors_needed -= 1
             self.save()
-
+    
     def __str__(self):
         return f"Donation Request for {self.patient_name}"
 

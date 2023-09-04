@@ -55,5 +55,27 @@ class DonationBase(BaseModel):
     email = models.EmailField(max_length=254, blank=True, null=True)
     age = models.PositiveIntegerField(default=18)
 
+    def set_status(self, status):
+        """Sets the status of the donation."""
+        self.status = status
+        self.save()
+        
+    def is_pending(self):
+        """Returns True if the donation is pending."""
+        if self.status == "Pending":
+            return True
+        return False
+
+    def is_completed(self):
+        """Returns True if the donation is completed."""
+        if self.status == "Completed":
+            return True
+        return False
+    def is_verified(self):
+        """Returns True if the donation is verified."""
+        if self.status == "Verified":
+            return True
+        return False
+
     class Meta:
         abstract = True

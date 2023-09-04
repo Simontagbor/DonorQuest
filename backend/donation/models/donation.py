@@ -23,29 +23,27 @@ class Donation(DonationBase):
 
     potential_lives_saved = models.PositiveIntegerField(default=0)
     
-    is_completed = models.BooleanField(default=False)
-    is_canceled = models.BooleanField(default=False)
-    is_rejected = models.BooleanField(default=False)
+    
 
     def calculate_lives_saved(self):
         self.potential_lives_saved = int(self.number_of_bags * self._CONVERSION_RATE)
         self.save()
 
     def schedule_donation(self, scheduled_date):
-        if self.status == "Pending":
+        if self.is_pending():
             self.scheduled_date = scheduled_date
             self.save()
 
     def complete_donation(self):
-        if self.status == "Pending" and self.scheduled_date:
-            self.status = "Completed"
+        if self.is_pending() and self.scheduled_date:
+            self.set_status("Completed")
             self.is_completed = True
             self.donation_date = self.scheduled_date
             self.verification_date = None  # Reset verification date
             self.save()
 
     def update_verification(self, donor_photo, blood_bag_photo):
-        if self.status == "Completed":
+        if self.is_completed():
             self.verification_date = timezone.now()
             self.donor_photo = donor_photo
             self.blood_bag_photo = blood_bag_photo
@@ -53,7 +51,7 @@ class Donation(DonationBase):
 
     def __str__(self):
         """Returns a string representation of the model."""
-        if self.status == "Pending":
+        if self.is_pending():
             return f"Donation by {self.donor_name} scheduled on {self.scheduled_date}"
         elif self.status == "Completed":
             return f"Donation by {self.donor_name} completed on {self.donation_date} pending verification"
