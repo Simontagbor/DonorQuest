@@ -1,0 +1,51 @@
+/* Styling for the header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+  }
+  
+  /* Styling for the Donor Quest title */
+  header p {
+    font-weight: bold;
+    margin: 10px;
+  }
+  
+  /* Styling for the navigation links */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+    }
+  nav ul li {
+    margin-right: 20px;
+  }
+  
+  nav ul li:last-child {
+    margin-right: 10px; /* Adjust the margin to control the gap */
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  /* Styling for the request-link class */
+  .request-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin-right: 10px; /* Adjust the margin to control the gap */
+  }
+  
+  /* Styling for the expanded-details class */
+  .expanded-details {
+    display: none;
+    /* Other styles for expanded details */
+  }
+  
+  /* Add additional styling as needed */
+  

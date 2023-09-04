@@ -1,0 +1,106 @@
+
+/* Define the 20% color (#2F2BF4) for text and accents */
+.text-primary {
+    font-size: medium;
+    color: #2F2BF4; /* Use this class for primary text color */
+}
+.form {
+    width: 50%;
+    margin-left: 15.5%;
+}
+/* Style the form container */
+.form-container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 24px;
+    box-shadow: 0px 0px 10px #21252938;
+    border: solid 1.5px #2f2bf463;
+    margin-bottom: 100px;
+    margin-top: 30px;
+}
+/* Apply styles to the .form-group class */
+.form-group {
+    margin-bottom: 20px; /* Add spacing between form elements */
+    
+}
+
+/* Style form labels */
+.form-group label {
+    color: #2F2BF4; /* Set label text color to the 20% color */
+    font-weight: bold; /* Make labels bold */
+    display: block; /* Place labels on a new line */
+    margin-bottom: 5px; /* Add spacing between label and input */
+}
+.form-group input {
+    display: flow-root;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    width: 100%;
+    border: solid 1.5px black;
+    border-radius: 12px;
+}
+
+/* Style form fields */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="select"],
+.form-group input[type="image"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+    width: 100%; /* Make form fields span the width of the form container */
+    padding: 10px; /* Add padding for form field spacing */
+    border: 1px solid #0a0a0a; /* Add a solid border with the 20% color */
+    border-radius: 12px; /* Add rounded corners to form fields */
+    max-height: 38px; /* Set a maximum height for textareas */
+}
+
+
+
+/* Style the patient story textarea */
+.form-group textarea {
+    max-height: 80px; /* Set a minimum height for the textarea */
+    resize: vertical; /* Allow vertical resizing based on content */
+}
+
+
+/* Style form field placeholders */
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group input[type="select"]::placeholder,
+.form-group select::placeholder,
+.form-group textarea::placeholder {
+    color: #ccc; /* Set placeholder text color */
+}
+
+/* Style error messages */
+.form-group .error-message {
+    color: #ff0000; /* Set error message text color to red */
+    font-size: 12px; /* Adjust font size for error messages */
+    margin-top: 5px; /* Add spacing between error message and form field */
+}
+
+.form-button {
+    padding: 10px 4px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 68px;
+    background: #2F2BF4;
+    width: 35%;
+    margin-left: 30%;
+    margin-right: 25%;
+    text-align: center;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    height: 45px;
+    color: #FFF;
+}
+/* Add more specific styles for form fields as needed */
