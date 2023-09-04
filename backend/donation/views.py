@@ -6,6 +6,9 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 
+def home(request):
+    return render(request, 'index.html')
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -65,16 +68,15 @@ def random_donation_view(request):
             donation.donor = request.user.donor
             donation.save()
             donation.calculate_lives_saved()
-            return redirect('/success_page/')
+            return redirect('/thank-you/')
     else:
         form = RandomDonationForm()
-    
     return render(request, './random_donation.html', {'form': form})
 
 # handle creation of specific Donations
 def specific_patient_donation_view(request, request_id):
     """Creates a new donation for a specific patient."""
-    donation_request = get_object_or_404(DonationRequest, request_id=request_id)
+    donation_request = get_object_or_404(DonationRequest, id=request_id)
     
     if request.method == 'POST':
         form = SpecificDonationForm(request.POST, initial={'donation_request': donation_request})

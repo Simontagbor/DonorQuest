@@ -7,6 +7,7 @@ app_name = 'donation'
 
 urlpatterns = [
     #donation app-specific URL patterns here
+    path('', views.home, name='home'),
     path('create_request/', views.create_request, name='create_request'),
     path('list_requests/', views.request_list, name='request_list'),
      # URL for the thank you page
