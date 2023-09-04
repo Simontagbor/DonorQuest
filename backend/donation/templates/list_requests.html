@@ -1,21 +1,44 @@
 {% extends '_base.html' %}
-
+{% load static %}
 {% block title %}View Requests{% endblock %}
 {% block main %}
-<div class="container mt-4">
-    <h2>Donation Requests</h2>
-    <ul class="list-group">
-        {% for request in donation_requests %}
-        <li class="list-group-item">
-            <h4>{{ request.patient_name }}</h4>
-            <p>Hospital: {{ request.hospital }}</p>
-            <p>Blood Type: {{ request.blood_type }}</p>
-            <p>Patient Story: {{ request.patient_story }}</p>
-            <!-- Add other request details as needed -->
-        </li>
-        {% empty %}
-        <li class="list-group-item">No donation requests available.</li>
-        {% endfor %}
-    </ul>
+<div class="content">
+    <div class="requests-container">
+        <h2>Help Us Find Donors</h2>
+    
+        <ul class="grid-list">
+            {% for request in donation_requests %}
+
+            <li class="ist-item">
+                <a class="item-link" href="/donate/request/{{request.id}}/">
+                    <div class="AvatarCardContainer">
+                        <div class="NameAvatarBox">
+                        <div class="AvatarBloodGroupDiv">
+                        <div class="AvatarProgressFrame">
+                        <div class="ProgressElipseDiv">
+                        <div class="ProgreesRings">
+                        <div class="Ellipse2"></div>
+                        <div class="Ellipse1"></div>
+                        <img class="AvatarFrame" src="{% static 'images/OIP.jpeg' %}" />
+                        <div class="BloodgroupLabel">
+                            <div class="BloodgroupText">{{request.blood_group}}</div>
+                        </div>
+                        <div class="AvatarLabel">
+                            <div class="AvatarLabelText">
+                                {{request.patient_name}}
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        
+            {% empty %}
+            <li class="list-group-item">No donation requests available.</li>
+
+            {% endfor %}
+        </ul>
+    
+    </div>
 </div>
 {% endblock %}
+

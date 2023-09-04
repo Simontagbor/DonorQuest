@@ -1,57 +1,57 @@
-{% extends '_base.html' %}
 
-{% block title %} Create Request {% endblock %}
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}Create Donation Request | DonorQuest{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/createrequest.css' %}">
+{% endblock %}
+
 {% block main %}
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card shadow">
-                <div class="card-body">
-                    <h2 class="card-title text-center mb-4">Create Donation Request</h2>
-                    <form method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="{{ form.patient_name.id_for_label }}" class="form-label">Patient Name</label>
-                            {{ form.patient_name }}
-                            <div class="invalid-feedback">{{ form.patient_name.errors }}</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="{{ form.blood_type.id_for_label }}" class="form-label">Blood Type</label>
-                            {{ form.blood_type }}
-                            <div class="invalid-feedback">{{ form.blood_type.errors }}</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="{{ form.hospital_name.id_for_label }}" class="form-label">Hospital</label>
-                            {{ form.hospital_name }}
-                            <div class="invalid-feedback">{{ form.hospital_name.errors }}</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="{{ form.patient_story.id_for_label }}" class="form-label">Patient Story</label>
-                            {{ form.patient_story }}
-                            <div class="invalid-feedback">{{ form.patient_story.errors }}</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="{{ form.patient_avatar.id_for_label }}" class="form-label">Patient Avatar</label>
-                            {{ form.patient_avatar }}
-                            <div class="invalid-feedback">{{ form.patient_avatar.errors }}</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="{{ form.tags.id_for_label }}" class="form-label">Tags</label>
-                            {{ form.tags }}
-                            <div class="invalid-feedback">{{ form.tags.errors }}</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="{{ form.number_of_pints.id_for_label }}" class="form-label">Number of Pints</label>
-                            {{ form.number_of_pints }}
-                            <div class="invalid-feedback">{{ form.number_of_pints.errors }}</div>
-                        </div>
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary">Create Request</button>
-                        </div>
-                    </form>
-                </div>
+<div class="content">
+    <div class="container">
+    <h1 class="text-primary">Create Donation Request</h1>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="form-container">
+                <form  method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.non_field_errors }}
+                    <div class="form-group">
+                        {{ form.patient_name.label_tag }}
+                        {{ form.patient_name }}
+                        {{ form.patient_name.errors }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.patient_story.label_tag }}
+                        {{ form.patient_story }}
+                        {{ form.patient_story.errors }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.blood_group.label_tag }}
+                        {{ form.blood_group }}
+                        {{ form.blood_group.errors }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.patient_avatar.label_tag }}
+                        {{ form.patient_avatar }}
+                        {{ form.patient_avatar.errors }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.number_of_pints.label_tag }}
+                        {{ form.number_of_pints }}
+                        {{ form.number_of_pints.errors }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.hospital.label_tag }}
+                        {{ form.hospital }}
+                        {{ form.hospital.errors }}
+                    </div>
+                    <button class="form-button" type="submit" class="btn btn-primary">Create Request</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 </div>
 {% endblock %}

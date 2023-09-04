@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+
+{% block title %}Donation Success{% endblock %}
+
+{% block main %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="modal fade show" tabindex="-1" aria-modal="true" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Donation Successful!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Your donation has been successfully submitted. Thank you for your contribution!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{% url 'donation:index' %}" class="btn btn-primary">Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

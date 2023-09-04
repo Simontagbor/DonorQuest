@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% block title %}Create Donation Request | DonorQuest{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<div class="HeroSectionImg"  style="background-image: url('{% static "images/heroimage.jpg" %}')">
+    <div class="HeroContent">
+        <div class="HeroTextBox" >
+            <div class="HeroText">
+                Join DonorQuest, where giving blood isn’t just a donation - it’s a lifeline
+            </div>
+        </div>
+        <div class="HeroButtonBox">
+            <button class="HeroButton">
+                <div class="HeroButtonText">let’s save lives</div>
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
