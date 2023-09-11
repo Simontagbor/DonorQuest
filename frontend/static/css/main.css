@@ -1,0 +1,88 @@
+/* main.css */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    /* color: #fff; */
+  }
+  
+  /* Header styles */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* background-color: rgba(13, 23, 56, 0.9); Dark navy blue with transparency */
+    z-index: 1; /* Ensures it's above the content */
+    transition: top 0.3s; /* Smooth transition when scrolling */
+    margin-bottom: 10px;
+  }
+  
+  /* Navigation bar styles */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block; /* Show the submenu on hover */
+  }
+  
+  /* Hide the submenu by default */
+  .dropdown-menu {
+    display: none;
+  }
+  
+  .navbar {
+    background-color: transparent; /* Make it transparent on the landing page */
+  }
+  
+  /* Link styles */
+  .nav-link{
+    color: white; /* White text for links */
+    /* border:green solid 2px;  */
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: larger;
+    font-weight: bold;
+  }
+   
+  a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #fff; /* White text for links */
+  }
+  
+  /* Button styles */
+  .login-button{
+    background-color: transparent;
+    /* border: green solid 2px; */
+    margin-right: 60px;
+    font-size: larger;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .btn {
+    /* background-color: #0041a8; Different shade of navy blue */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Footer styles */
+  .footer {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    text-align: center;
+    
+  }
+  .footer-bottom{
+    width: 50%;
+    margin: auto;
+    padding: auto;
+    justify-content: space-between;
+  }
+  .footer-logo{
+    margin-top: 0px;
+    padding: auto;
+  }

@@ -1,0 +1,38 @@
+/* index.css */
+
+/* Landing page background */
+.HeroSectionImg {
+    /* background-image: url('static/images/heroimage.jpg'); Add your background image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  /* Hero text styles */
+  .HeroText {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff; /* White text on the hero section */
+  }
+  
+  /* Hero button styles */
+  .HeroButton {
+    /* background-color: #0a3066;  Different shade of navy blue */
+  }
+  
+  /* Logo styles */
+  
+  .container-fluid{
+    color: black;
+    font-weight: bolder;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+   text-align: center;
+  }
+  
