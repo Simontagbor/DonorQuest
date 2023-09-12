@@ -1,0 +1,46 @@
+/* Add this CSS to your existing CSS file (create_request.css) */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.2s ease-in-out;
+  }
+  
+  .input-label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.2s ease-in-out;
+    color: #ccc; /* Lighter color for placeholder text */
+  }
+  
+  .form-control:focus + .input-label,
+  .form-control:valid + .input-label {
+    top: -5px;
+    left: 10px;
+    font-size: 12px;
+    background-color: #fff;
+    color: #007bff; /* Color for the label when focused or valid */
+  }
+  
+  /* Style the select input separately */
+  .form-control-select {
+    appearance: none; /* Remove default styles */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.2s ease-in-out;
+    background: url('down-arrow.png') no-repeat right center; /* Add a custom down arrow */
+  }
+  
+  .form-control-select:focus {
+    border-color: #007bff;
+  }
+  
