@@ -3,7 +3,7 @@
 /* Body styles */
 body {
     font-family: Arial, sans-serif;
-    /* color: #fff; */
+
   }
   
   /* Header styles */
@@ -12,7 +12,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    /* background-color: rgba(13, 23, 56, 0.9); Dark navy blue with transparency */
+    /*background-color: rgba(13, 23, 56, 0.9); */
     z-index: 1; /* Ensures it's above the content */
     transition: top 0.3s; /* Smooth transition when scrolling */
     margin-bottom: 10px;
@@ -34,7 +34,7 @@ body {
   
   /* Link styles */
   .nav-link{
-    color: white; /* White text for links */
+    color: white;
     /* border:green solid 2px;  */
     margin-top: 20px;
     margin-right: 20px;
@@ -44,7 +44,7 @@ body {
    
   a {
     text-decoration: none; /* Remove underlines from links */
-    color: #fff; /* White text for links */
+    color: white;
   }
   
   /* Button styles */
@@ -58,7 +58,7 @@ body {
   }
   .btn {
     /* background-color: #0041a8; Different shade of navy blue */
-    color: #fff;
+    color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -67,7 +67,7 @@ body {
   
   /* Footer styles */
   .footer {
-    color: #fff;
+    color: white;
     position: absolute;
     bottom: 0;
     left: 0;

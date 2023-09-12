@@ -9,7 +9,7 @@ urlpatterns = [
     #donation app-specific URL patterns here
     path('', views.home, name='home'),
     path('create_request/', views.create_request, name='create_request'),
-    path('list_requests/', views.request_list, name='request_list'),
+    path('list_requests/', views.request_list, name='list_requests'),
      # URL for the thank you page
     path('thank-you/', views.ThankYouView.as_view(), name='thank_you'),
    # Define a URL pattern for donating for a specific request

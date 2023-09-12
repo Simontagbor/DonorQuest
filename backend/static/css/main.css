@@ -1,290 +1,91 @@
-.body {
+/* This styles the front page of the project */
+/* main.css */
+body {
+    background-image: url('your-background-image.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif; /* Change the font family as needed */
     margin: 0;
-    font-family: Inter;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #000;
-    background-color: #fff;
-}
-.content {
-    background-color: inherit;
-    padding-top: 30px;
-    margin-right: 12.5%;
-    margin-left: 12.5%;
-    height:120%;
-}
-
-.nav_container {
-    display: flex;
+    overflow-y: scroll;
+  }
+  
+  .header {
+    background-color: white;
+    color: black;
+    position: fixed;
+    top: 0;
     width: 100%;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    gap: 275px;
-    flex-shrink: 0;
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    background-color: transparent;
-    transition: background_color 0.3s;
-    z-index: 0;
-}
-
-
-
-/* Adjust navigation text color for better visibility */
-.nav_container a.nav-link {
-    color: #fff;
-}
-
-.nav-tucked-up {
-    transform: translateY(-100%);
-    transition: transform 0.3s;
-}
-
-/* Class for coming down */
-.nav-come-down {
-    transform: translateY(0);
-    transition: transform 0.3s;
-}
-
-.nav_container .logo-div {
-   display: flex;
-    height: 40px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    color: #FFF;
+    z-index: 100;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.3); /* Greyish and spottable border */
+  }
+  
+  .header .navbar-nav .nav-link {
+    color: inherit; /* Inherit text color from the parent */
+    font-weight: bold; /* Make text bold */
+  }
+  
+  .header .logo-div {
+    margin-left: auto;
+    margin-right: 20px; /* Adjust spacing from the right */
+    color: inherit; /* Inherit text color from the parent */
+    text-decoration: none; /* Remove underlines */
+  }
+  
+  .header .navbar-toggler-icon {
+    color: white; /* Set color of the hamburger icon */
+  }
+  
+  .header .navbar-toggler {
+    border: none; /* Remove border from the hamburger icon button */
+  }
+  
+  .header .navbar-light .navbar-toggler-icon {
+    color: white; /* Set color of the hamburger icon */
+  }
+  
+  .header .navbar-toggler:focus {
+    outline: none; /* Remove focus outline from the hamburger icon button */
+  }
+  
+  .header .navbar-collapse {
+    justify-content: flex-end;
+  }
+  
+  .header .navbar-nav .menu-item {
+    margin: 0 15px; /* Adjust spacing between menu items */
+  }
+  
+  .header .login-button {
+    background-color: navy;
+    margin-right: 20px; /* Adjust spacing from the right */
+    padding: 10px 20px;
     text-align: center;
-    font-family: Inter;
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    width: 23%;
-}
-
-.links-div {
-    width: 34%;
-    display: flex;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 0
-}
-
-.links-div .menu-item {
-    display: flex;
-    padding: 8px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;
-    color: #000;
-    text-align: center;
-    font-family: Inter;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    text-wrap: nowrap;
-    text-overflow: unset;
-    position: relative;
-    text-decoration: none; /* Remove the default underline */
-}
-
-
-/* Create the underline element and style it */
-.menu-item::before {
-    content: "";
+    border-radius: 20px; /* Add round edges to the button */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .header .login-button:hover {
+    background-color: darkblue;  /* Change color on hover */
+    /* add a shadow so when the button is hovered it looks like it's being pressed */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .footer {
+    background-color: brown;
+    color: white;
+    padding: 10px;
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px; /* Adjust the thickness of the underline */
-    background-color: transparent; /* Initially transparent */
-    transition: background-color 0.3s; /* Add a smooth transition effect */
-}
-
-/* Add the hover effect to reveal the underline */
-.menu-item:hover::before {
-    background-color: #2F2BF4; /* Change the underline color on hover */
-}
-
-
-.button-div {
-    display: flex;
-    height: 40px;
-    padding: 3px 4px;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    width: 15%;
-}
-.button-div .button {
-    display: flex;
-    width: 100px;
-    padding: 9px 4px;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 68px;
-    background: #2F2BF4;
-}
-
-.button-div .button .button-text {
     width: 100%;
-    flex-shrink: 0;
-    color: #FFF;
-    text-align: center;
-    font-family: Inter;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-
-.navbar-expand-lg {
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-}
-/* Add CSS for the dropdown menu */
-.menu-item:hover .dropdown {
-    display: block;
-}
-
-.dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    z-index: 1;
-}
-
-.dropdown-item {
-    padding: 8px;
-    text-align: center;
-}
-
-/* Media query for responsiveness */
-@media (max-width: 768px) {
-    .nav_container {
-        flex-direction: column;
-    }
-    
-    .links-div {
-        width: 100%;
-    }
-    
-    .menu-item {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .dropdown {
-        position: static;
-        display: none;
-    }
-}
-/* Add CSS for the dropdown menu */
-.menu-item .menu-text:hover .dropdown {
-    display: block;
-}
-
-.dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    z-index: 1;
-}
-
-.dropdown-item {
-    padding: 8px;
-    text-align: center;
-}
-
-
-
-/* Add a hover effect to the dropdown items */
-.dropdown-item:hover {
-    background-color: #2F2BF4; /* Change the background color on hover */
-    color: #000; /* Change the text color on hover */
-    transition: background-color 0.3s, color 0.3s; /* Add a smooth transition effect */
-}
-
-/* Style the main footer container */
-.footer {
-    background-color: #2F2BF4; /* Background color for the footer */
-    color: #fff; /* Text color for the footer */
-    padding: 20px 0; /* Add padding to the top and bottom */
-}
-
-/* Center and style the footer content */
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Style the footer logo or text */
-.footer-logo {
-    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  .footer .footer-bottom {
+    background-color: black;
+    color: white;
+    font-size: large;
     font-weight: bold;
-}
-
-/* Style the footer links */
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-.footer-links ul li:last-child {
-    margin-right: 0; /* Remove margin from the last list item */
-}
-
-.footer-links ul li a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease; /* Add a smooth color transition */
-}
-
-.footer-links ul li a:hover {
-    color: #ccc; /* Change color on hover */
-}
-
-/* Style the footer bottom text */
-.footer-bottom {
     text-align: center;
-    padding-top: 10px;
-}
-
-/* Responsive design for the footer */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-logo {
-        margin-bottom: 10px;
-    }
-
-    .footer-links ul li {
-        margin-bottom: 10px;
-    }
-}
+  }
+  

@@ -1,10 +1,10 @@
 /* Styling for the header */
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: white;
-    padding: 10px 20px;
+    background-color: brown;
+    padding-bottom: 1000px;
+
   }
   
   /* Styling for the Donor Quest title */

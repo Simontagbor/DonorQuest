@@ -2,11 +2,11 @@
 
 # Run environment setup script
 echo "Setting up the development environment..."
-./setup_env.sh
+./set_up_env.sh
 
 # Run database setup script
 echo "Setting up the databases..."
-./setup_db.sh
+./set_up_db.sh
 
 # Provide instructions for running migrations
 echo "Development environment and databases are set up."
