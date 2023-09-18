@@ -1,0 +1,2 @@
+docker build --tag donorquest-django
+docker run --publish 8000:8000 donorquest-django

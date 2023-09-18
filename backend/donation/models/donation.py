@@ -3,6 +3,8 @@ from django.db import models
 from django.utils import timezone
 from donation.models.base import DonationBase
 from django.contrib.auth.models import User
+# from .drive import DonationDrive
+# from .donationplan import DonationPlan
 # from .donationrequest import DonationRequest
 
 
@@ -11,19 +13,31 @@ class Donation(DonationBase):
     donor_name = models.CharField(max_length=100, blank=True, null=True)
     donor_phone = models.CharField(max_length=20, blank=True, null=True)
     donor = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    donation_request = models.ForeignKey("DonationRequest", on_delete=models.SET_NULL, null=True, blank=True)
-    status = models.CharField(max_length=20, choices=DonationBase.STATUS_CHOICES, default="Pending")
+    donation_request = models.ForeignKey("DonationRequest", 
+                                         on_delete=models.SET_NULL, null=True, 
+                                         blank=True)
+    status = models.CharField(max_length=20, choices=DonationBase.STATUS_CHOICES, 
+                              default="Pending")
+    donation_location = models.CharField(max_length=100, blank=True, null=True)
 
-    scheduled_date = models.DateTimeField(blank=True, null=True)
-    donation_request = models.ForeignKey("DonationRequest", on_delete=models.SET_NULL, null=True, blank=True)
+    scheduled_date = models.DateField(blank=True, null=True)
+    scheduled_time = models.TimeField(blank=True, null=True)
+    donation_request = models.ForeignKey("DonationRequest", on_delete=models.SET_NULL, 
+                                         null=True, blank=True)
 
     # Fields related to verification
     verification_date = models.DateTimeField(blank=True, null=True)
-    verification_photo = models.ImageField(upload_to="donor_photos", blank=True, null=True)
+    verification_photo = models.ImageField(upload_to="donor_photos", 
+                                           blank=True, null=True)
 
     potential_lives_saved = models.PositiveIntegerField(default=0)
     
-    
+    # fields related to donation drive
+    donation_drive = models.ForeignKey("DonationDrive", on_delete=models.SET_NULL,
+                                        null=True, blank=True)
+    #  fields related to donation plan
+    donation_plan = models.ForeignKey("DonationPlan", on_delete=models.CASCADE, 
+                                      null=True, blank=True)
 
     def calculate_lives_saved(self):
         self.potential_lives_saved = int(self.number_of_bags * self._CONVERSION_RATE)

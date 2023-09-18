@@ -14,14 +14,14 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            # Log the user in.
             login(request, user)
-            return redirect('home')  # Replace 'home' with the appropriate URL name.
+            return redirect('home')  
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
 
 def login_view(request):
+    """ logs in a user """
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -30,15 +30,16 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('/list_requests/')  # Redirect to your home page after login
+                return redirect('home')  
     else:
         form = AuthenticationForm()
-    
     return render(request, './registration/login.html', {'form': form})
 
 def logout_view(request):
+    """ logs out a user """
     logout(request)
-    return redirect('home')  # Redirect to your home page after logout
+    return redirect('home')  
+
 
 def create_request(request):
     """ creates a new donation request """
@@ -68,7 +69,7 @@ def random_donation_view(request):
             donation.donor = request.user.donor
             donation.save()
             donation.calculate_lives_saved()
-            return redirect('/thank-you/')
+            return redirect('home')
     else:
         form = RandomDonationForm()
     return render(request, './random_donation.html', {'form': form})
@@ -90,7 +91,8 @@ def specific_patient_donation_view(request, request_id):
     else:
         form = SpecificDonationForm(initial={'donation_request': donation_request})
     
-    return render(request, './specific_patient_donation.html', {'form': form, 'donation_request': donation_request})
+    return render(request, './specific_patient_donation.html', {'form': form, 
+                                                                'donation_request': donation_request})
 
 
 class ThankYouView(TemplateView):

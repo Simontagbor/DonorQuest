@@ -1,5 +1,5 @@
 from django.db import models # noqa: E402
-from .donation import Donation
+# from .donation import Donation
 from .donationtarget import DonationTarget # noqa: F401
 import json
 from django.contrib.auth.models import User # noqa: E402
@@ -14,15 +14,21 @@ class UserProfile(BaseModel):
     profile_name = models.CharField(max_length=50)
     blood_type = models.CharField(max_length=5)
     profile_avatar = models.ImageField(upload_to="profile_avatars", blank=True)
-
-    # TOD add attributes for tracking milestone, Donation History, Badges etc.
+    city = models.CharField(max_length=50, blank=True)
     
     # Donation history (assuming a OneToMany relationship with Donation model)
-    donation_history = models.ForeignKey(Donation, on_delete=models.CASCADE, blank=True, null=True)
+    donation_history = models.ForeignKey("Donation", on_delete=models.CASCADE,
+                                         blank=True, null=True)
     
     # Milestones, targets, and lives saved
+    target_donations = models.PositiveIntegerField(default=0)
     number_of_donations = models.PositiveIntegerField(default=0)
-    donation_targets = models.ForeignKey(DonationTarget, on_delete=models.CASCADE, blank=True, related_name='user_profiles', null=True)  # noqa: E501
+    donation_targets = models.ForeignKey(DonationTarget,
+                                         on_delete=models.CASCADE,
+                                         blank=True, related_name='user_profiles',
+                                         null=True
+                                        ) 
+    
     potential_lives_saved = models.PositiveIntegerField(default=0)
   
     # getters and setters
@@ -44,8 +50,11 @@ class UserProfile(BaseModel):
 
     def set_donation_target(self, target_amount, target_description=None):
         """Creates or updates a donation target for this user profile."""
-        target, created = DonationTarget.objects.get_or_create(user_profile=self, defaults={'target_amount': target_amount, 'target_description': target_description})
-        
+        target, created = DonationTarget.objects.get_or_create(
+            user_profile=self, 
+            defaults={'target_amount': target_amount, 
+                      'target_description': target_description}
+        )
         if not created:
             target.target_amount = target_amount
             target.target_description = target_description

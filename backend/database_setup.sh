@@ -17,9 +17,18 @@ sudo mysql -u root -p -e "CREATE USER IF NOT EXISTS '$DB_USER_TEST'@'localhost' 
 
 # Grant privileges with sudo
 sudo mysql -u root -p -e "GRANT ALL PRIVILEGES ON $DB_NAME_DEV.* TO '$DB_USER_DEV'@'localhost';"
+sudo mysql -u root -p -e "GRANT PROCESS PRIVILEGES ON $DB_NAME_DEV.* TO '$DB_USER_DEV'@'localhost';"
 sudo mysql -u root -p -e "GRANT ALL PRIVILEGES ON $DB_NAME_TEST.* TO '$DB_USER_TEST'@'localhost';"
 sudo mysql -u root -p -e "FLUSH PRIVILEGES;"
 
+# # Import SQL dump file into the dev database (if not already initialized)
+# if ! mysql -u "$DB_USER_DEV" -p"$DB_PASSWORD_DEV" -e "use $DB_NAME_DEV"; then
+#     mysql -u "$DB_USER_DEV" -p"$DB_PASSWORD_DEV" "$DB_NAME_DEV" < /app/dev_dbdump.sql
+#     echo "Dummy data imported."
+# else
+#     echo "Database already initialized, skipping import."
+# fi
+
+
 echo "Databases and users created successfully."
-echo "running  'source venv/bin/activate' to activate the virtual environment."
-source venv/bin/activate.
+

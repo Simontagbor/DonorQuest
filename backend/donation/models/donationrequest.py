@@ -1,7 +1,7 @@
 from django.db import models
 import json
 from donation.models.base import DonationBase
-from donation.models.donation import Donation
+# from donation.models.donation import Donation
 
 class DonationRequest(DonationBase):
     """Represents a request for blood donation."""
@@ -13,9 +13,14 @@ class DonationRequest(DonationBase):
     patient_story = models.TextField()
     patient_avatar = models.ImageField(upload_to="patient_avatars", blank=True)
     hospital = models.CharField(max_length=100, blank=True, null=True)
-    donors_needed = models.PositiveIntegerField(default=1)  # Default number of donors needed
-    pending_donations = models.ForeignKey(Donation, on_delete=models.CASCADE, null=True, blank=True, related_name='pending_requests')
-    verified_donations = models.ForeignKey(Donation, on_delete=models.CASCADE, null=True, blank=True, related_name='verified_requests')
+    donors_needed = models.PositiveIntegerField(default=1)
+    pending_donations = models.ForeignKey("Donation", on_delete=models.CASCADE, 
+                                          null=True, blank=True, 
+                                          related_name='pending_requests')
+    
+    verified_donations = models.ForeignKey("Donation", on_delete=models.CASCADE, 
+                                           null=True, blank=True, 
+                                           related_name='verified_requests')
     
     
     def set_donors_needed(self, number_of_pints):

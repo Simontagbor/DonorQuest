@@ -1,0 +1,29 @@
+version: '3'
+services:
+  # Django app service
+  web:
+    image: app_donorquest  # Use your Django image name
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - ./app:/app  # Mount your Django app code into the container
+    environment:
+      - DJANGO_SETTINGS_MODULE=backend.settings
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+  # MySQL service
+  db:
+    image: mysql:8.0.34  # Use MySQL 8.0.34 image
+    environment:
+      MYSQL_ROOT_PASSWORD: dev  # Change this to your desired root password
+      MYSQL_DATABASE: dev_db  # Change this to your desired database name
+      MYSQL_USER: dev  # Change this to your desired MySQL username
+      MYSQL_PASSWORD: dev  # Change this to your desired MySQL password
+    volumes:
+      - mysql_data:/var/lib/mysql  # Persist MySQL data outside the container
+      - ./dev_dbdump.sql:/docker-entrypoint-initdb.d/dev_dbdump.sql  # Mount the SQL dump file
+
+volumes:
+  mysql_data:

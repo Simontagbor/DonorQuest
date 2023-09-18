@@ -1,10 +1,70 @@
 {% extends '_base.html' %}
+{% load static %}
+{% block title %} Login | DonorQuest{% endblock %}
 
-{% block content %}
-  <h2>Login</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block main %}
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="form-container">
+          <div class="slide-controls">
+            <input type="radio" name="slide" id="login" checked>
+            <input type="radio" name="slide" id="signup">
+            <label for="login" class="slide login">Login</label>
+            <label for="signup" class="slide signup">Sign Up</label>
+            <div class="slider-tab"></div>
+          </div>
+          <div class="form-inner">
+            <form action="#" method="post" class="login">
+              {% csrf_token %}
+              {{ form.non_field_errors }}
+              <div class="field">
+                <input type="text" placeholder="Email Address" required>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Password" required>
+              </div>
+              <div class="pass-link">
+                <a href="#">Reset password?</a>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Login">
+              </div>
+              <div class="signup-link">
+                Don't Have an Account? <a href="{% url 'donation:register' %}">Create A New</a>
+              </div>
+              <!-- {{ form.as_p }} -->
+            </form>
+            <form action="#" class="signup">
+              {% csrf_token %}
+              {{ form.non_field_errors }}
+              <div class="field">
+                <input type="text" placeholder="First Name" required>
+              </div>
+              <div class="field">
+                <input type="text" placeholder="Last Name (Optional)">
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Password" required>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="Confirm Password" required>
+              </div>
+              <div class="field btn">
+                <div class="btn-layer"></div>
+                <input type="submit" value="Sign Up">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

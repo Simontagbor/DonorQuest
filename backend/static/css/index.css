@@ -79,3 +79,109 @@
     flex-shrink: 0;
 }
 
+.MainSection {
+    width: 100%; 
+    height: 100%; 
+    padding-top: 128px; 
+    padding-bottom: 102px; 
+    padding-left: 102px; 
+    padding-right: 209px; 
+    background: white; 
+    justify-content: flex-start; 
+    align-items: center; 
+    display: inline-flex;
+}
+
+
+.SectionGroup {
+    align-self: stretch; 
+    padding-left: 47px; 
+    padding-right: 47px; 
+    padding-top: 25px; 
+    padding-bottom: 25px; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 69px; 
+    display: inline-flex
+}
+
+.SectionItemText {
+    padding-left: 10px; 
+    padding-right: 10px; 
+    padding-top: 32px; 
+    padding-bottom: 32px; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 1px; 
+    display: inline-flex;
+}
+
+.TextBox {
+    height: 244px; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: flex-start; 
+    gap: 17px; 
+    display: flex
+}
+
+.TextBoxH1 {
+    width: 581px; 
+    color: #F92929; 
+    font-size: 39px; 
+    font-family: Inter; 
+    font-weight: 900; 
+    word-wrap: break-word;
+}
+
+.TextBoxP {
+    width: 556px; 
+    height: 133px; 
+    text-align: justify; 
+    color: #666666; 
+    font-size: 18px; 
+    font-family: Inter; 
+    font-weight: 500; 
+    word-wrap: break-word
+}
+
+.ButtonDiv {
+    width: 148px;
+    height: 70px;
+    padding-bottom: 3px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.SectionButton {
+    width: 143px; 
+    height: 48px; 
+    padding-left: 5px; 
+    padding-right: 5px; 
+    padding-top: 9px; 
+    padding-bottom: 9px; 
+    background: #F92929; 
+    border-radius: 3px; 
+    overflow: hidden; 
+    justify-content: space-between; 
+    align-items: center; 
+    display: flex"
+}
+
+.GetStarted {
+    /* width: 116px;  */
+    text-align: center; 
+    color: white; 
+    font-size: 20px; 
+    font-family: Inter; 
+    font-weight: 600; 
+    word-wrap: break-word"
+}
+
+.SectionItemImg {
+    width: 453px; 
+    height: 442px;
+}

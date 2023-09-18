@@ -3,7 +3,7 @@
 /backend/donorquest/__pycache__/
 /backend/db.sqlite3
 /backend/media/
-/backend/static/
+# /backend/static/images/
 /backend/venv/
 /backend/.env
 
@@ -171,23 +171,5 @@ cython_debug/
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
-backend/patient_avatars/117-7412932254_88a1103aef_z-2eee3636517200ad.jpg
-backend/patient_avatars/Ecomondo_2021.jpg.webp
-backend/patient_avatars/ground-to-ceiling-partition-design-for-living-room-and-dining.jpg
-backend/patient_avatars/repository-open-graph-template_1YDQE6a.png
-backend/patient_avatars/repository-open-graph-template_64nWJMw.png
-backend/patient_avatars/repository-open-graph-template_DizI4hr.png
-backend/patient_avatars/repository-open-graph-template_IwGeWl9.png
-backend/patient_avatars/repository-open-graph-template_ks2liLg.png
-backend/patient_avatars/repository-open-graph-template_Tdzkbui.png
-backend/patient_avatars/repository-open-graph-template.png
-backend/patient_avatars/Screenshot_2023-08-18_173941-removebg-preview_1_tO9Li42.png
-backend/patient_avatars/Screenshot_2023-08-18_173941-removebg-preview_1_VBarhhG.png
-backend/patient_avatars/Screenshot_2023-08-18_173941-removebg-preview_1_x54HQpB.png
-backend/patient_avatars/Screenshot_2023-08-18_173941-removebg-preview_1.png
-backend/patient_avatars/Untitled_design_OMNqKDv.png
-backend/patient_avatars/Untitled_design_RpWQjGN.png
-backend/patient_avatars/Untitled_design_y5QCJkX.png
-backend/patient_avatars/Untitled_design.png
-.gitignore
+#.idea/ad.jpg
+backend/patient_avatars/

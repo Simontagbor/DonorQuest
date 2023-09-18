@@ -25,7 +25,7 @@
                         </div>
                         <div class="AvatarLabel">
                             <div class="AvatarLabelText">
-                                {{request.patient_name}}
+                                {{ request.patient_name|slice:"0:8" }}
                             </div>
                         </div>
                     </div>
@@ -37,6 +37,10 @@
 
             {% endfor %}
         </ul>
+
+        <div class="text-center mt-4">
+            <a href="/create_request/" class="btn btn-primary">Create Request</a>
+        </div>
     
     </div>
 </div>

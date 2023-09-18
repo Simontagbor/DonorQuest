@@ -46,10 +46,14 @@ class DonationBase(BaseModel):
         ('double_red_cells', 'Double Red Cells'),
     ]
 
-    blood_group = models.CharField(choices=BLOOD_GROUP_CHOICES, max_length=3, default="A+")
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="Pending")
-    donation_option = models.CharField(max_length=20, choices=DONATION_OPTIONS, default="Voluntary")
-    donation_type = models.CharField(max_length=20, choices=DONATION_TYPES, default="Regular")
+    blood_group = models.CharField(choices=BLOOD_GROUP_CHOICES, 
+                                   max_length=3, default="A+")
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES,
+                              default="Pending")
+    donation_option = models.CharField(max_length=20, choices=DONATION_OPTIONS, 
+                                       default="Voluntary")
+    donation_type = models.CharField(max_length=20, choices=DONATION_TYPES, 
+                                     default="Regular")
     number_of_pints = models.PositiveIntegerField(default=1)
     date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     email = models.EmailField(max_length=254, blank=True, null=True)

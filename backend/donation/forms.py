@@ -28,9 +28,14 @@ class BaseDonationForm(forms.ModelForm):
             'blood_group',
             'number_of_pints',
             'scheduled_date',
+            'scheduled_time',
             'donation_option',
             'donation_type',
         ]
+        widgets = {
+            'scheduled_date': forms.DateInput(attrs={'class': 'datepicker'}),
+            'scheduled_time': forms.TimeInput(attrs={'class': 'timepicker'})
+        }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -45,6 +50,7 @@ class RandomDonationForm(BaseDonationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['donation_request'].required = False
+        self.fields['scheduled_date'].required = False
 
 class SpecificDonationForm(BaseDonationForm):
     """Form for creating a new donation request."""
