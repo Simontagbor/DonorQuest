@@ -64,7 +64,7 @@
     align-items: center;
     flex-shrink: 0;
     border-radius: 68px;
-    background: #2F2BF4;
+    background: #F92929;
 }
 
 .HeroButtonText {
@@ -184,4 +184,7 @@
 .SectionItemImg {
     width: 453px; 
     height: 442px;
+}
+.MainSection{
+    border-bottom: lightgrey 1px solid;
 }

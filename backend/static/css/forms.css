@@ -2,7 +2,7 @@
 /* Define the 20% color (#2F2BF4) for text and accents */
 .text-primary {
     font-size: medium;
-    color: #2F2BF4; /* Use this class for primary text color */
+    color: #F92929; /* Use this class for primary text color */
 }
 .form {
     width: 50%;
@@ -16,7 +16,7 @@
     background-color: #fff;
     border-radius: 24px;
     box-shadow: 0px 0px 10px #21252938;
-    border: solid 1.5px #2f2bf463;
+    border: solid 1.5px #F92929;
     margin-bottom: 100px;
     margin-top: 30px;
 }
@@ -28,7 +28,7 @@
 
 /* Style form labels */
 .form-group label {
-    color: #2F2BF4; /* Set label text color to the 20% color */
+    color: #F92929; /* Set label text color to the 20% color */
     font-weight: bold; /* Make labels bold */
     display: block; /* Place labels on a new line */
     margin-bottom: 5px; /* Add spacing between label and input */
@@ -90,7 +90,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 68px;
-    background: #2F2BF4;
+    background: #F92929;
     width: 35%;
     margin-left: 30%;
     margin-right: 25%;

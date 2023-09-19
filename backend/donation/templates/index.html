@@ -4,72 +4,56 @@
 {% block title %}Create Donation Request | DonorQuest{% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/forms.css' %}">
-    <style>
-        /* Custom CSS for the home page */
-        .nav_container .logo-div {
-            color: #ffffff; /* Change the logo text color */
-        }
-        
-        .links-div a.nav-link {
-            color: #ffffff; /* Change the navigation link text color */
-        }
-
-        .button-div .button .button-text {
-            color: #000000; /* Change the button background color */
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 {% endblock %}
 
 {% block main %}
-    
-<div class="HeroSectionImg"  style="background-image: url('{% static "images/heroimage.jpg" %}')">
+<div class="HeroSectionImg" style="background-image: url('{% static "images/heroimage.jpg" %}')">
     <div class="HeroContent">
-        <div class="HeroTextBox" >
+        <div class="HeroTextBox">
             <div class="HeroText">
                 Join DonorQuest, where giving blood isn’t just a donation - it’s a lifeline
             </div>
         </div>
-        <div class="HeroButtonBox">
-            <button class="HeroButton">
-                <div class="HeroButtonText">let’s save lives</div>
-            </button>
-        </div>
     </div>
 </div>
+
 <div class="MainSection">
     <div class="SectionGroup">
-    <div class="SectionItemText">
-    <div class="TextBox">
-    <div class="TextBoxH1">Track and Manage Blood Donation Commitments </div>
-    <div class="TextBoxP">you are only customizing the appearance of these elements for the home page while still using the rest of the behavior and structure defined in _base.html.you are only customizing the appearance of these elements for the home page while still using the rest of the behavior and structure defined.</div>
-    </div>
-    <div class="ButtonDiv" >
-    <div class="SectionButton">
-    <div class="GetStarted">Get Started</div>
-    </div>
-    </div>
-    </div>
-    <img class="SectionItemImg" src="{% static 'images/Sectionimage1.png' %}" />
-    </div>
-    
-</div>
-<div class="MainSection">
-    <img class="SectionItemImg" src="{% static 'images/Sectionimage1.png' %}"/>
-    <div class="SectionGroup">
-        
         <div class="SectionItemText">
             <div class="TextBox">
                 <div class="TextBoxH1">
-                    Track and Manage Blood Donation Commitments 
+                    Track and Manage Blood Donation Commitments
                 </div>
                 <div class="TextBoxP">
-                    you are only customizing the appearance of these elements for the home page while still using the rest of the behavior and structure defined in _base.html.you are only customizing the appearance of these elements for the home page while still using the rest of the behavior and structure defined.
+                    You are only customizing the appearance of these elements for the home page while still using the rest of the behavior and structure defined in _base.html. You are only customizing the appearance of these elements for the home page while still using the rest of the behavior and structure defined.
+                </div>
+            </div>
+            <div class="ButtonDiv">
+                <div class="SectionButton">
+                    <div class="GetStarted">Get Started</div>
                 </div>
             </div>
         </div>
-        <div class="ButtonDiv" >
+    </div>
+    <img class="SectionItemImg" src="{% static 'images/Sectionimage1.png' %}" />
+</div>
+
+<div class="MainSection">
+    <img class="SectionItemImg" src="{% static 'images/Sectionimage1.png' %}" />
+    <div class="SectionGroup">
+        <div class="SectionItemText">
+            <div class="TextBox">
+                <div class="TextBoxH1">
+                    Track and Manage Blood Donation Commitments
+                </div>
+                <div class="TextBoxP">
+                    You are only customizing the appearance of these elements for the home page while still using the rest of the behavior and structure defined in _base.html. You are only customizing the appearance of these elements for the home page while still using the rest of the behavior and structure defined.
+                </div>
+            </div>
+        </div>
+        <div class="ButtonDiv">
             <div class="SectionButton">
                 <div class="GetStarted">Get Started</div>
             </div>
@@ -77,4 +61,24 @@
     </div>
 </div>
 
+<div class="MainSection">
+    <div class="SectionGroup">
+        <div class="SectionItemText">
+            <div class="TextBox">
+                <div class="TextBoxH1">
+                    Track and Manage Blood Donation Commitments
+                </div>
+                <div class="TextBoxP">
+                    You are only customizing the appearance of these elements for the home page while still using the rest of the behavior and structure defined in _base.html. You are only customizing the appearance of these elements for the home page while still using the rest of the behavior and structure defined.
+                </div>
+            </div>
+            <div class="ButtonDiv">
+                <div class="SectionButton">
+                    <div class="GetStarted">Get Started</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img class="SectionItemImg" src="{% static 'images/Sectionimage1.png' %}" />
+</div>
 {% endblock %}

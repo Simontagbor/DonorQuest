@@ -5,7 +5,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color: #000;
     background-color: #fff;
 }
 .content {
@@ -39,11 +38,10 @@
 
 /* Adjust navigation text color for better visibility */
 .nav_container a.nav-link {
-    color: #000000;
+    color:  #F92929;
 }
-
 .home_nav_container a.navlink {
-    color: #ffffff;
+    color: #fff6f6;
 }
 
 .nav-tucked-up {
@@ -64,7 +62,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: #000000;
+    color:  #F92929;
     text-align: center;
     font-family: Inter;
     font-size: 21px;
@@ -74,9 +72,6 @@
     width: 23%;
 }
 
-.home_nav_container .logo-div {
-    color: #ffffff;
-}
 
 .links-div {
     width: 34%;
@@ -121,7 +116,7 @@
 
 /* Add the hover effect to reveal the underline */
 .menu-item:hover::before {
-    background-color: #2F2BF4; /* Change the underline color on hover */
+    background-color: #F92929 ; /* Change the underline color on hover */
 }
 
 
@@ -141,7 +136,8 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 68px;
-    background: #2F2BF4;
+    background:  #F92929;
+    text-decoration: none; /* Remove the default underline */
 }
 
 .button-div .button .button-text {
@@ -226,14 +222,14 @@
 
 /* Add a hover effect to the dropdown items */
 .dropdown-item:hover {
-    background-color: #2F2BF4; /* Change the background color on hover */
+    background-color:  #F92929; /* Change the background color on hover */
     color: #000; /* Change the text color on hover */
     transition: background-color 0.3s, color 0.3s; /* Add a smooth transition effect */
 }
 
 /* Style the main footer container */
 .footer {
-    background-color: #2F2BF4; /* Background color for the footer */
+    background-color:  #F92929; /* Background color for the footer */
     color: #fff; /* Text color for the footer */
     padding: 20px 0; /* Add padding to the top and bottom */
 }
@@ -301,3 +297,26 @@
         margin-bottom: 10px;
     }
 }
+
+/* Your existing CSS rules */
+/* ... */
+
+/* Additional CSS for preventing horizontal scrolling */
+body {
+    overflow-x: hidden;
+}
+
+/* Additional CSS for the grey border at the bottom */
+body::before {
+    content: "";
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Adjust the border height as needed */
+    background-color: #ccc; /* Grey color for the border */
+}
+
+/* ... */
+
