@@ -21,7 +21,7 @@
             <div class="slider-tab"></div>
           </div>
           <div class="form-inner">
-            <form action="{% url 'login' %}" method="post" class="login">
+            <form action="{% url 'donation:login' %}" method="post" class="login">
               {% csrf_token %}
               {{ form.non_field_errors }}
               <div class="field">
@@ -31,7 +31,7 @@
                 <input type="password" name="password" placeholder="Password" required>
               </div>
               <div class="pass-link">
-                <a href="{% url 'password_reset' %}">Reset password?</a>
+                <a href="#">Reset password?</a>
               </div>
               <div class="field btn">
                 <div class="btn-layer"></div>
@@ -41,7 +41,7 @@
                 Don't Have an Account? <a href="#" id="signup-link">Sign Up</a>
               </div>
             </form>
-            <form action="{% url 'signup' %}" method="post" class="signup">
+            <form action="{% url 'donation:register' %}" method="post" class="signup">
               {% csrf_token %}
               {{ form.non_field_errors }}
               <div class="field">
@@ -64,7 +64,7 @@
                 <input type="submit" value="Sign Up">
               </div>
               <div class="login-link">
-                Already Have an Account? <a href="#" id="login-link">Login</a>
+                Already Have an Account? <a href="{% url 'donation:login' %}" id="login-link">Login</a>
               </div>
             </form>
           </div>
