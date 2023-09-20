@@ -4,7 +4,7 @@ const loginBtn = document.querySelector("label.login");
 const signupBtn = document.querySelector("label.signup");
 const signupLink = document.querySelector("form .signup-link a");
 
-signupBtn.onclick = (() => {
+signupBtn.onclick = () => {
   loginForm.style.marginLeft = "-50%";
   loginText.style.marginLeft = "-50%";
 
@@ -12,9 +12,9 @@ signupBtn.onclick = (() => {
   document.querySelectorAll(".signup .field").forEach((field) => {
     field.style.display = "block";
   });
-});
+};
 
-loginBtn.onclick = (() => {
+loginBtn.onclick = () => {
   loginForm.style.marginLeft = "0%";
   loginText.style.marginLeft = "0%";
 
@@ -22,9 +22,9 @@ loginBtn.onclick = (() => {
   document.querySelectorAll(".signup .field").forEach((field) => {
     field.style.display = "none";
   });
-});
+};
 
-signupLink.onclick = (() => {
+signupLink.onclick = () => {
   signupBtn.click();
   return false;
-});
+};
