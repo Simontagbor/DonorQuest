@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block main %}
+<div class="content">
 <div class="wrapper">
   <div class="title-text">
     <div class="title login">
@@ -48,6 +49,7 @@
       <form action="{% url 'donation:register' %}" method="post" class="signup">
         {% csrf_token %}
         {{ form.non_field_errors }}
+        {{form.errors}}
         <div class="field">
           <input type="text" name="first_name" placeholder="First Name" required>
         </div>
@@ -57,7 +59,7 @@
         <div class="field">
           <input type="email" name="email" placeholder="email" required>
         </div>
-        <div class="field">
+        <!-- <div class="field">
           <select name="blood_group" id="blood-group" required>
             <option value="" disabled selected>Select Blood Group</option>
             <option value="A+">A+</option>
@@ -69,7 +71,7 @@
             <option value="O+">O+</option>
             <option value="O-">O-</option>
           </select>
-        </div>
+        </div> -->
         <div class="field">
           <input type="password" name="password1" placeholder="Password" required>
         </div>
@@ -83,6 +85,7 @@
       </form>
     </div>
   </div>
+</div>
 </div>
 <script src="{% static 'js/login.js' %}"></script> <!-- Include the JavaScript file here -->
 {% endblock %}

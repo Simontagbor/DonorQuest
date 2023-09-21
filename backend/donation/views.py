@@ -16,10 +16,11 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')  
+            return redirect('/')  
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
+
 
 # Login view
 def login_view(request):
@@ -32,7 +33,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('home')  
+                return redirect('/')  
     else:
         form = AuthenticationForm()
     return render(request, './registration/login.html', {'form': form})
@@ -41,8 +42,7 @@ def login_view(request):
 def logout_view(request):
     """ logs out a user """
     logout(request)
-    return redirect('home')  
-
+    return redirect('home')  # Redirect to your home page after logout
 
 # Create donation request view
 def create_request(request):
@@ -95,9 +95,7 @@ def specific_patient_donation_view(request, request_id):
     else:
         form = SpecificDonationForm(initial={'donation_request': donation_request})
     
-    return render(request, './specific_patient_donation.html', {'form': form, 
-                                                                'donation_request': donation_request})
-
+    return render(request, 'specific_patient_donation.html', {'form': form, 'donation_request': donation_request})
 
 # Thank You view
 class ThankYouView(TemplateView):
