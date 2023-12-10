@@ -6,25 +6,26 @@
   padding-bottom: 20px;
   padding-left: 21px;
   padding-right: 22px;
-  background: white;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  backdrop-filter: blur(20px); /* Apply a blur effect */
   border-radius: 11px;
   overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
   border: 1px rgba(0, 0, 0, 0.20) solid;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   display: inline-flex;
-   /* Add a transition for a smooth effect */
-   transition: transform 0.2s ease-in-out;
-
+  /* Add a transition for a smooth effect */
+  transition: transform 0.2s ease-in-out;
 }
+
 
 
 /* Apply the hover effect on hover */
 .AvatarCardContainer:hover {
   transform: translateY(-5px); /* Move the element up slightly on hover */
-  border: 1px #F92929 solid
+  border: 1px #F92929 solid;
 }
 
 .NameAvatarBox {
@@ -125,12 +126,15 @@
   align-items: center;
   display: inline-flex;
 }
+.BloodgroupLabel :hover {
+  color: #F92929;
+}
 
 .BloodgroupText {
   width: 35px;
   height: 19px;
   text-align: center;
-  color: black;
+  color: rgb(43, 42, 42);;
   font-size: 16px;
   font-family: Inter;
   font-weight: 700;
@@ -150,7 +154,7 @@
 
 .AvatarLabelText {
   text-align: center;
-  color: black;
+  color: rgb(43, 42, 42);
   font-size: 20px;
   font-family: Inter;
   font-weight: 700;

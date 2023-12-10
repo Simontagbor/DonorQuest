@@ -42,7 +42,7 @@ def login_view(request):
 def logout_view(request):
     """ logs out a user """
     logout(request)
-    return redirect('home')  # Redirect to your home page after logout
+    return redirect('/')  # Redirect to your home page after logout
 
 # Create donation request view
 def create_request(request):
@@ -73,7 +73,7 @@ def random_donation_view(request):
             donation.donor = request.user.donor
             donation.save()
             donation.calculate_lives_saved()
-            return redirect('home')
+            return redirect('thank_you/')
     else:
         form = RandomDonationForm()
     return render(request, 'random_donation.html', {'form': form})
@@ -91,7 +91,7 @@ def specific_patient_donation_view(request, request_id):
             donation.donation_request = donation_request
             donation.save()
             donation.calculate_lives_saved()
-            return redirect('/success_page/')  # Redirect to success page
+            return redirect('thank_you/')  # Redirect to success page
     else:
         form = SpecificDonationForm(initial={'donation_request': donation_request})
     

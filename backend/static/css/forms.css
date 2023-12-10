@@ -40,7 +40,7 @@
     font-size: inherit;
     line-height: inherit;
     width: 100%;
-    border: solid 1.5px black;
+    border: solid 1.5px rgb(230, 230, 230);
     border-radius: 12px;
 }
 
@@ -55,7 +55,7 @@
 .form-group textarea {
     width: 100%; /* Make form fields span the width of the form container */
     padding: 10px; /* Add padding for form field spacing */
-    border: 1px solid #0a0a0a; /* Add a solid border with the 20% color */
+    border: 1px solid rgb(230, 230, 230); /* Add a solid border with the 20% color */
     border-radius: 12px; /* Add rounded corners to form fields */
     max-height: 38px; /* Set a maximum height for textareas */
 }
@@ -91,7 +91,7 @@
     align-items: center;
     border-radius: 68px;
     background: #F92929;
-    width: 35%;
+    width: 45%;
     margin-left: 30%;
     margin-right: 25%;
     text-align: center;

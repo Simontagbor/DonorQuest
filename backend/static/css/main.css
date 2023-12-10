@@ -47,7 +47,10 @@ body {
 
 /* Adjust navigation text color for better visibility */
 .nav_container a.nav-link {
-    color:  #F92929;
+    color: #F92929;
+    font-weight: 600;
+    width: 90%;
+    padding-left: 17px;
 }
 .home_nav_container a.navlink {
     color: #fff6f6;
@@ -81,15 +84,27 @@ body {
     width: 23%;
 }
 
-
-.links-div {
-    width: 34%;
-    height: 40px;
+/* avatar dropdown */
+.links-wrapper {
+    display: contents;
+    padding-left: 0px;
+}
+.dropdown-toggle {
     display: flex;
-    gap: 10px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+.links-div {
+    width: 40%;
+    height: 90%;
+    display: flex;
+    gap: 1px;
     margin: 0px;
     text-decoration: none;
     list-style: none;
+    padding-left: 0px;
+    justify-content: space-evenly;
 }
 
 .links-div .menu-item {
@@ -111,10 +126,10 @@ body {
 
 /* Create the underline element and style it */
 .menu-item::before {
-    /* content: ""; */
-    /* bottom: 0;
+    content: ""; 
+    bottom: 0;
     left: 0;
-    right: 0; */
+    right: 0;
     height: 2px; /* Adjust the thickness of the underline */
     background-color: transparent; /* Initially transparent */
     transition: background-color 0.3s; /* Add a smooth transition effect */
@@ -125,6 +140,23 @@ body {
     background-color: #F92929 ; /* Change the underline color on hover */
 }
 
+.avatar-container {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #ccc; /* Background color */
+}
+
+.avatar-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;/* Makes the image circular if it's a square image */
+    border: 1px solid #fff; /* Border around the image */
+}
 
 .button-div {
     display: flex;
@@ -171,7 +203,7 @@ body {
 }
 
 .dropdown {
-    display: none;
+    display: contents;
     position: absolute;
     top: 100%;
     left: 0;
@@ -210,16 +242,6 @@ body {
     display: block;
 }
 
-.dropdown {
-
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    z-index: 1;
-}
 
 .dropdown-item {
     padding: 8px;
