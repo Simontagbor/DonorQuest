@@ -1,0 +1,108 @@
+/* list_requests.css */
+  
+  body {
+    background-color: white;
+  }
+  
+  /* Header styles */
+  .header {
+    background-color: white;
+    color: black;
+    position: fixed; /* Fixed header */
+    width: 100%;
+    z-index: 100; /* Ensure header is above content */
+    transition: background-color 0.3s; /* Smooth background color transition */
+  }
+
+  /* Grid container styles */
+  .grid-container {
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid with auto-sized columns */
+    border: white solid 0px;
+    justify-content: space-evenly;
+    gap: 10px; /* Spacing between grid items */
+    margin-top: 70px; /* Margin below the fixed header */
+    padding: 10px; /* Add padding for separation from the header */
+  }
+  
+  /* Grid item styles (request boxes) */
+  .list-item {
+    border: 1px solid #ccc; /* Greyish border */
+    padding: 10px;
+    text-align: center;
+    background-color: #fff; /* White background */
+    border-radius: 5px;
+  }
+  
+  /* Avatar styles */
+  .AvatarCardContainer {
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .AvatarFrame {
+    background-color: black;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%; /* Round picture */
+  }
+  
+  .AvatarFrame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .BloodgroupLabel,
+  .AvatarLabel {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .BloodgroupText {
+    color: black;
+}
+  
+
+  /* Link styles */
+  .nav-link{
+    color: black;
+    /* border:green solid 2px;  */
+    margin-top: 20px;
+    margin-right: 20px;
+    font-size: larger;
+    font-weight: bold;
+  }
+  .login-button{
+    background-color: transparent;
+    /* border: green solid 2px; */
+    color: black;
+    margin-right: 60px;
+    font-size: larger;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .logo-div{
+    color: black;
+    background-color: transparent;
+    /* border: green solid 2px; */
+    margin-right: 60px;
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .AvatarLabel{
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;       
+  }
+ .BloodgroupText{
+    text-align: center;
+    color: black;
+    font-family: quitensential;
+ }

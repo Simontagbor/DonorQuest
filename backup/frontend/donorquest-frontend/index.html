@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends '_base.html' %}
+
+<!-- {% block title %}View Requests{% endblock %} -->
+{% block html %}
+<html>
+  <head>
+    {% block head %}{{ block.super }}{% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>donorquest_frontend</title>
+  </head>
+  <body>
+  {% block body %}
+    {{ block.super }}
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+{% endblock body %}
+  </body>
+</html>
+{% endblock html %}
